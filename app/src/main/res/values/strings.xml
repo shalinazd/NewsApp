@@ -15,4 +15,11 @@
     <string name="txt_fullname">Fullname</string>
     <string name="txt_confirm_password">Confirm Password</string>
     <string name="txt_sign_in">Sign In</string>
+    <string name="txt_9_feb_2021">9, Feb 2021</string>
+    <string name="error_text">Not Empty</string>
+    <string name="text_user">Users</string>
+    <string name="error_pass">Password Mismatch</string>
+    <string name="error_regis">Register Failed</string>
+    <string name="txt_button">Button</string>
+    <string name="txt_send">Send</string>
 </resources>

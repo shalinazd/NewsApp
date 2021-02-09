@@ -5,7 +5,7 @@
     android:id="@+id/iv_signin_illus"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".SignInActivity">
+    tools:context=".activity.SignInActivity">
 
     <ImageView
         android:id="@+id/imageView"
@@ -63,7 +63,7 @@
         app:startIconDrawable="@drawable/mail">
 
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/et_name"
+            android:id="@+id/et_email"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@color/main_trans"
