@@ -22,4 +22,16 @@
     <string name="error_regis">Register Failed</string>
     <string name="txt_button">Button</string>
     <string name="txt_send">Send</string>
+    <string name="txt_breaking_news">Breaking News</string>
+    <string name="txt_highlight">Does Rio Die in ‘Money Heist’?</string>
+    <string name="txt_lee_jeno">Lee Jeno</string>
+    <string name="txt_all">All</string>
+    <string name="txt_international">International</string>
+    <string name="txt_media">Media</string>
+    <string name="txt_magazine">Magazine</string>
+    <string name="txt_business">Business</string>
+    <string name="title_items">Umbrella Academy Secretly Confirmed <b>Vanya Is The Apocalypse All Along</b></string>
+    <string name="dummy_date">15/02/21</string>
+    <string name="dummy_duration">12 min read</string>
+    <string name="tv_title_item">Umbrella Academy Secretly Confirmed Vanya Is The Apocalypse All Along</string>
 </resources>
