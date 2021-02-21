@@ -34,4 +34,19 @@
     <string name="dummy_date">15/02/21</string>
     <string name="dummy_duration">12 min read</string>
     <string name="tv_title_item">Umbrella Academy Secretly Confirmed Vanya Is The Apocalypse All Along</string>
+    <string name="content_desc">If you’ve just started Money Heist Part 3, it makes sense that you would be concerned about little Rio (Miguel Herrán). But you don’t have to worry about his death. No, Rio does not die in Money Heist. As for his psychological health? That’s another matter entirely.</string>
+    <string name="txt_na_jaemin">Na Jaemin</string>
+    <string name="txt_jaemin_email">na.jaemin@gmail.com</string>
+    <string name="txt_preference">Preference</string>
+    <string name="txt_dark_mode">Dark Mode</string>
+    <string name="txt_account">Account</string>
+    <string name="txt_notification">Notification</string>
+    <string name="txt_change_account">Change Account</string>
+    <string name="txt_language">Language</string>
+    <string name="txt_bookmark">Bookmark</string>
+    <string name="txt_setting">Setting</string>
+    <string name="txt_privacy_and_setting_help">Privacy and Setting Help</string>
+    <string name="txt_log_out">Log Out</string>
+    <string name="txt_image_button">Image Button</string>
+    <string name="txt_edit_account">Edit Account</string>
 </resources>
