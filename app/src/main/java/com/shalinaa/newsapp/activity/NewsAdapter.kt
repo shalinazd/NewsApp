@@ -11,19 +11,12 @@ import com.shalinaa.newsapp.R
 import com.shalinaa.newsapp.model.ArticlesItem
 import com.shalinaa.newsapp.model.ResponseNews
 import kotlinx.android.synthetic.main.news_item.view.*
+import org.jetbrains.anko.intentFor
+import org.jetbrains.anko.startActivity
 
 class NewsAdapter (var context: Context, var listNews: List<ArticlesItem?>?) :
     RecyclerView.Adapter<NewsAdapter.ViewHolder>() {
 
-    private var onItemClickCallBack : OnItemClickCallBack? = null
-
-    fun setItemOnClickCallBack (onItemClickCallBack: OnItemClickCallBack){
-        this.onItemClickCallBack = onItemClickCallBack
-    }
-
-    interface OnItemClickCallBack {
-        fun onItemClicked(newsData : ArticlesItem)
-    }
 
     inner class ViewHolder (view : View) :RecyclerView.ViewHolder(view){
         fun bind (news: ArticlesItem){
@@ -33,7 +26,11 @@ class NewsAdapter (var context: Context, var listNews: List<ArticlesItem?>?) :
                 tv_duration_item.text = news.author
                 Glide.with(context).load(news.urlToImage).centerCrop().into(iv_item_news)
                 itemView.setOnClickListener{
-                    onItemClickCallBack?.onItemClicked(news)
+                    itemView.context?.startActivity(
+                            itemView.context.intentFor<DetailActivity>(
+                                    "EXTRA_NEWS" to news
+                            )
+                    )
                 }
             }
         }
@@ -48,10 +45,6 @@ class NewsAdapter (var context: Context, var listNews: List<ArticlesItem?>?) :
 
     override fun onBindViewHolder(holder: NewsAdapter.ViewHolder, position: Int) {
         holder.bind(listNews?.get(position)!!)
-        holder.itemView.setOnClickListener{
-            val intent = Intent(context, DetailActivity::class.java)
-            intent.putExtra(DetailActivity.EXTRA_NEWS, listNews!![position])
-        }
     }
 
 }

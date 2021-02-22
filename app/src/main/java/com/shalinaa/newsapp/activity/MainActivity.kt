@@ -10,11 +10,16 @@ import android.view.View
 import android.widget.ProgressBar
 import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.bumptech.glide.Glide
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.FirebaseUser
+import com.google.firebase.database.*
 import com.shalinaa.newsapp.R
 import com.shalinaa.newsapp.model.ResponseNews
 import com.shalinaa.newsapp.service.ApiService
 import com.shalinaa.newsapp.service.RetroConfig
 import kotlinx.android.synthetic.main.activity_main.*
+import kotlinx.android.synthetic.main.activity_profile.*
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -23,6 +28,8 @@ import java.util.*
 
 
 class MainActivity : AppCompatActivity(), View.OnClickListener {
+    var refUsers : DatabaseReference? = null
+    var firebaseUser : FirebaseUser? = null
     val date = getCurrentDateTime()
 //    val dateNew = Calendar.getInstance()
 //    val year = dateNew.get(Calendar.YEAR)
@@ -49,13 +56,30 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
         ib_profile_main.setOnClickListener(this)
         tv_date.text = date.toString("dd/MM/yyyy")
         getNews()
+
+        firebaseUser = FirebaseAuth.getInstance().currentUser
+        refUsers = FirebaseDatabase.getInstance().getReference("Users").child(firebaseUser!!.uid)
+        refUsers!!.addValueEventListener(object : ValueEventListener {
+            override fun onDataChange(snapshot: DataSnapshot) {
+                for (p0 in snapshot.children){
+                    val photo = snapshot.child("photo").value.toString()
+                    Glide.with(this@MainActivity).load(photo).into(civ_profile)
+                }
+
+            }
+
+            override fun onCancelled(error: DatabaseError) {
+                TODO("Not yet implemented")
+            }
+
+        })
     }
 
     private fun getNews() {
         val country = "id"
         val apiKey = "f96f89d5262e46f5b1715d0e559f12c4"
 
-        var loading = ProgressDialog.show(this, "Request Data", "Loading. .")
+        val loading = ProgressDialog.show(this, "Request Data", "Loading. .")
         RetroConfig.getInstance().getNewsData(country, apiKey).enqueue(
             object : Callback<ResponseNews>{
                 override fun onFailure(call: Call<ResponseNews>, t: Throwable) {
@@ -77,6 +101,15 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
                             val newsAdapter = NewsAdapter(this@MainActivity, newsData)
                             rv_main.adapter = newsAdapter
                             rv_main.layoutManager = LinearLayoutManager(this@MainActivity)
+
+                            val dataHighlight = response.body()
+                            Glide.with(this@MainActivity)
+                                .load(dataHighlight?.articles?.component2()?.urlToImage)
+                                .centerCrop().into(iv_main_banner)
+
+                            tv_highlight.text = dataHighlight?.articles?.component2()?.title
+                            tv_name_author.text = dataHighlight?.articles?.component2()?.author
+                            tv_date_highlight.text = dataHighlight?.articles?.component2()?.publishedAt
                         }else{
                             Toast.makeText(this@MainActivity, "Data Failed !", Toast.LENGTH_SHORT).show()
                         }
