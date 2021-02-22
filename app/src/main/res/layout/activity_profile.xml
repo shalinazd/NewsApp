@@ -1,0 +1,412 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginBottom="@dimen/_32dp"
+    tools:context=".activity.ProfileActivity">
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <ImageButton
+            android:id="@+id/iv_back_profile"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:background="@color/white"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/ic_arrow_back"
+            android:contentDescription="@string/txt_image_button" />
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/iv_profile"
+            android:layout_width="@dimen/_100dp"
+            android:layout_height="@dimen/_100dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="20dp"
+            android:src="@drawable/foto_dummy"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/iv_back_profile" />
+
+        <TextView
+            android:id="@+id/tv_name_profile"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="28dp"
+            android:text="@string/txt_na_jaemin"
+            android:textSize="@dimen/_20sp"
+            android:textColor="@color/main"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toEndOf="@+id/iv_profile"
+            app:layout_constraintTop_toTopOf="@+id/iv_profile" />
+
+        <TextView
+            android:id="@+id/tv_email_profile"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:text="@string/txt_jaemin_email"
+            app:layout_constraintBottom_toBottomOf="@+id/iv_profile"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.004"
+            app:layout_constraintStart_toEndOf="@+id/iv_profile"
+            app:layout_constraintTop_toBottomOf="@+id/tv_name_profile"
+            app:layout_constraintVertical_bias="0.0" />
+
+        <TextView
+            android:id="@+id/tv_preferences"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="20dp"
+            android:text="@string/txt_preference"
+            android:textColor="@android:color/darker_gray"
+            android:textSize="18sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/iv_profile" />
+
+        <ImageButton
+            android:id="@+id/ib_dark_mode"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/background_img_button"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_preferences"
+            app:srcCompat="@drawable/ic_dark_mode"
+            android:contentDescription="@string/txt_image_button" />
+
+        <TextView
+            android:id="@+id/tv_dark_mode"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:text="@string/txt_dark_mode"
+            app:layout_constraintBottom_toBottomOf="@+id/ib_dark_mode"
+            app:layout_constraintStart_toEndOf="@+id/ib_dark_mode"
+            app:layout_constraintTop_toTopOf="@+id/ib_dark_mode" />
+
+        <com.google.android.material.switchmaterial.SwitchMaterial
+            android:id="@+id/sw_dark_mode"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="20dp"
+            app:layout_constraintBottom_toBottomOf="@+id/tv_dark_mode"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/tv_dark_mode" />
+
+        <ImageButton
+            android:id="@+id/ib_notification"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/background_img_button"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/ib_dark_mode"
+            app:srcCompat="@drawable/ic_baseline_notifications_none_24"
+            android:contentDescription="@string/txt_image_button" />
+
+        <TextView
+            android:id="@+id/tv_notification"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:text="@string/txt_notification"
+            app:layout_constraintBottom_toBottomOf="@+id/ib_notification"
+            app:layout_constraintStart_toEndOf="@+id/ib_notification"
+            app:layout_constraintTop_toTopOf="@+id/ib_notification" />
+
+        <com.google.android.material.switchmaterial.SwitchMaterial
+            android:id="@+id/sw_notif"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="20dp"
+            app:layout_constraintBottom_toBottomOf="@+id/tv_notification"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toEndOf="@+id/tv_notification"
+            app:layout_constraintTop_toTopOf="@+id/tv_notification"
+            app:layout_constraintVertical_bias="0.0" />
+
+        <TextView
+            android:id="@+id/tv_account"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="24dp"
+            android:text="@string/txt_account"
+            android:textColor="@android:color/darker_gray"
+            android:textSize="18sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/ib_notification" />
+
+        <ImageButton
+            android:id="@+id/ib_edit_acc"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="20dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            android:background="@drawable/background_img_button"
+            app:layout_constraintTop_toBottomOf="@+id/tv_account"
+            app:srcCompat="@drawable/ic_outline_border_color_24"
+            android:contentDescription="@string/txt_image_button" />
+
+        <TextView
+            android:id="@+id/tv_edit_acc"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:text="@string/txt_edit_account"
+            app:layout_constraintBottom_toBottomOf="@+id/ib_edit_acc"
+            app:layout_constraintStart_toEndOf="@+id/ib_edit_acc"
+            app:layout_constraintTop_toTopOf="@+id/ib_edit_acc" />
+
+        <ImageButton
+            android:id="@+id/ib_forward_edit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="20dp"
+            app:layout_constraintBottom_toBottomOf="@+id/tv_edit_acc"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.99"
+            android:background="@color/white"
+            app:layout_constraintStart_toEndOf="@+id/tv_edit_acc"
+            app:layout_constraintTop_toTopOf="@+id/tv_edit_acc"
+            app:layout_constraintVertical_bias="0.416"
+            app:srcCompat="@drawable/ic_baseline_keyboard_arrow_right_24"
+            android:contentDescription="@string/txt_image_button" />
+
+        <ImageButton
+            android:id="@+id/ib_change_acc"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/background_img_button"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/ib_edit_acc"
+            app:srcCompat="@drawable/ic_outline_sync_alt_24"
+            android:contentDescription="@string/txt_image_button" />
+
+        <TextView
+            android:id="@+id/tv_change_acc"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:text="@string/txt_change_account"
+            app:layout_constraintBottom_toBottomOf="@+id/ib_change_acc"
+            app:layout_constraintStart_toEndOf="@+id/ib_change_acc"
+            app:layout_constraintTop_toTopOf="@+id/ib_change_acc" />
+
+        <ImageButton
+            android:id="@+id/ib_forward_change_acc"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="20dp"
+            android:background="@color/white"
+            app:layout_constraintBottom_toBottomOf="@+id/tv_change_acc"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toEndOf="@+id/tv_change_acc"
+            app:layout_constraintTop_toTopOf="@+id/tv_change_acc"
+            app:layout_constraintVertical_bias="0.416"
+            app:srcCompat="@drawable/ic_baseline_keyboard_arrow_right_24"
+            android:contentDescription="@string/txt_image_button" />
+
+        <ImageButton
+            android:id="@+id/ib_language"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/background_img_button"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/ib_change_acc"
+            app:srcCompat="@drawable/ic_globe"
+            android:contentDescription="@string/txt_image_button" />
+
+        <TextView
+            android:id="@+id/tv_language"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:text="@string/txt_language"
+            app:layout_constraintBottom_toBottomOf="@+id/ib_language"
+            app:layout_constraintStart_toEndOf="@+id/ib_language"
+            app:layout_constraintTop_toTopOf="@+id/ib_language"
+            app:layout_constraintVertical_bias="0.38" />
+
+        <ImageButton
+            android:id="@+id/ib_forward_language"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="20dp"
+            android:background="@color/white"
+            app:layout_constraintBottom_toBottomOf="@+id/tv_language"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toEndOf="@+id/tv_language"
+            app:layout_constraintTop_toTopOf="@+id/tv_language"
+            app:layout_constraintVertical_bias="0.458"
+            app:srcCompat="@drawable/ic_baseline_keyboard_arrow_right_24"
+            android:contentDescription="@string/txt_image_button" />
+
+        <ImageButton
+            android:id="@+id/ib_bookmark"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/background_img_button"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/ib_language"
+            app:srcCompat="@drawable/ic_outline_bookmark_border_24"
+            android:contentDescription="@string/txt_image_button" />
+
+        <TextView
+            android:id="@+id/tv_bookmark"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:text="@string/txt_bookmark"
+            app:layout_constraintBottom_toBottomOf="@+id/ib_bookmark"
+            app:layout_constraintStart_toEndOf="@+id/ib_bookmark"
+            app:layout_constraintTop_toTopOf="@+id/ib_bookmark" />
+
+        <ImageButton
+            android:id="@+id/ib_forward_bookmark"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="20dp"
+            android:background="@color/white"
+            app:layout_constraintBottom_toBottomOf="@+id/tv_bookmark"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toEndOf="@+id/tv_bookmark"
+            app:layout_constraintTop_toTopOf="@+id/tv_bookmark"
+            app:layout_constraintVertical_bias="0.541"
+            app:srcCompat="@drawable/ic_baseline_keyboard_arrow_right_24"
+            android:contentDescription="@string/txt_image_button" />
+
+        <TextView
+            android:id="@+id/tv_setting"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="24dp"
+            android:text="@string/txt_setting"
+            android:textColor="@android:color/darker_gray"
+            android:textSize="18sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/ib_bookmark" />
+
+        <ImageButton
+            android:id="@+id/ib_setting_acc"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/background_img_button"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_setting"
+            app:srcCompat="@drawable/ic_outline_settings_24"
+            android:contentDescription="@string/txt_image_button" />
+
+        <TextView
+            android:id="@+id/tv_privacy_setting"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:text="@string/txt_privacy_and_setting_help"
+            app:layout_constraintBottom_toBottomOf="@+id/ib_setting_acc"
+            app:layout_constraintStart_toEndOf="@+id/ib_setting_acc"
+            app:layout_constraintTop_toTopOf="@+id/ib_setting_acc" />
+
+        <ImageButton
+            android:id="@+id/ib_forward_privacy"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="20dp"
+            app:layout_constraintBottom_toBottomOf="@+id/tv_privacy_setting"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:background="@color/white"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toEndOf="@+id/tv_privacy_setting"
+            app:layout_constraintTop_toTopOf="@+id/tv_privacy_setting"
+            app:srcCompat="@drawable/ic_baseline_keyboard_arrow_right_24"
+            android:contentDescription="@string/txt_image_button" />
+
+        <ImageButton
+            android:id="@+id/ib_sign_out"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/background_img_button"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/ib_setting_acc"
+            app:srcCompat="@drawable/ic_baseline_sign_out"
+            android:contentDescription="@string/txt_image_button" />
+
+        <TextView
+            android:id="@+id/tv_log_out"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:text="@string/txt_log_out"
+            android:textColor="@color/red"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/ib_sign_out"
+            app:layout_constraintTop_toTopOf="@+id/ib_sign_out"
+            app:layout_constraintVertical_bias="0.407" />
+
+        <ImageButton
+            android:id="@+id/imageButton15"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="20dp"
+            android:background="@color/white"
+            app:layout_constraintBottom_toBottomOf="@+id/tv_log_out"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toEndOf="@+id/tv_log_out"
+            app:layout_constraintTop_toTopOf="@+id/tv_log_out"
+            app:layout_constraintVertical_bias="0.458"
+            app:srcCompat="@drawable/ic_baseline_keyboard_arrow_right_24"
+            android:contentDescription="@string/txt_image_button" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</ScrollView>
